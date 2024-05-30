@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+      border: 2px solid #dfc2a4 ;
+      padding: 10px; 
+      margin-left: 400px; 
+      margin-right: 400px;
+      margin-top: 30px;
+      margin-bottom: 0px; 
+    }
+    form {
+      text-align: left;
+      margin: 50px 100px; 
+      font-family: prox;
+
+    }
+    .formbutton:hover{ background-color: #d8b591!important; color: white!important;}
+    .formbutton:active{
+        background-color: #d2a97e!important;
+        color: white!important;
+    }    
+</style>
+
+<body>
+
+    {% include 'background.html' without context %}
+
+    <div class="box">
+        <form> 
+            <div class="form-group mt-4">
+                <label for="From">🚅From</label>
+                <input type="text" class="form-control" id="From" placeholder="MAS">
+            </div>
+            <div class="form-group mt-4">
+                <label for="To">🚅To</label>
+                <input type="text" class="form-control" id="To" placeholder="TVC">
+            </div>
+            <div class="form-group mt-4">
+                <label for="From">📅Date</label>
+                <input type="date" class="form-control" id="Date" required pattern="\d{2}-\d{2}-\d{4}" min="2024-01-01" max="2026-12-31">
+            </div>
+            <div class="button mt-4" style="text-align:right;">
+            <button type="button" class="btn btn-default formbutton">Submit</button>
+            </div>
+        </form>
+      </div>
+</body>
+</html>

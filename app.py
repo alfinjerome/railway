@@ -1,38 +1,26 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-JOBS = [{
-    'id': 1,
-    'title': 'Data',
-    'location': 'Bengaluru, India',
-    'salary': 'Rs. 200'
-}, {
-    'id': 2,
-    'title': 'BS',
-    'location': 'Delhi, India',
-    'salary': 'Rs. 10,00,000'
-}, {
-    'id': 3,
-    'title': 'DS',
-    'location': 'UP, India',
-    'salary': 'Rs. 100,000'
-}]
-
 
 @app.route("/")
-def book():
-    return render_template('booking.html')
+def home():
+    return render_template('book.html')
 
 
 @app.route("/trains")
-def list():
-    return render_template('trains.html', jobs=JOBS)
+def trainsdetails():
+    return render_template('trains.html')
 
 
-@app.route('/api/listing')
-def listjson():
-    return jsonify(JOBS)
+@app.route("/details")
+def passdetails():
+    return render_template("details.html")
+
+
+@app.route("/confirmation")
+def billdetails():
+    return render_template("confirmation.html")
 
 
 if __name__ == "__main__":
